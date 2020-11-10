@@ -6,7 +6,7 @@ namespace QuickBuy.Dominio.Entidades
     public class Usuario : Entidades
     {
 
-        public int id { get; set; }
+        public int Id { get; set; }
 
         public string Email { get; set; }
 
