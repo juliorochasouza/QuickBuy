@@ -1,0 +1,13 @@
+// lembrete de configuração
+// sempre clicar com botão direito do mouse sobre o arquivo
+// Propriedade - e marcar para sempre copiar para diretorio de saida
+
+
+{
+  "Chave": "ValorChave",
+  "ConnectionStrings": {
+    "SqlServerConnection":""  
+    "QuickBuyDB": "server=localhost;uid=root;pwd=admin;database=QuickBuyDB"
+  }
+}
+

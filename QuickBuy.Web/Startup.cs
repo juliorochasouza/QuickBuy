@@ -29,8 +29,8 @@ namespace QuickBuy.Web
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            // busca o caminho do banco de dados
-            var connectionString = Configuration.GetConnectionString("");
+            // busca o caminho do banco de dados no arquivo config.json
+            var connectionString = Configuration.GetConnectionString("QuickBuyDB");
             // configuração para referenciar o contexto para pegar o repositorio
             services.AddDbContext<QuickBuyContexto>(option => option.UseMySql(connectionString, m => m.MigrationsAssembly("QuickBuy.Repositorio")));
 
