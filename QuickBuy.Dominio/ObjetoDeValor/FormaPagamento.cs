@@ -1,7 +1,6 @@
-﻿using QuickBuy.Dominio.Enumerados;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using QuickBuy.Dominio.Entidades;
+using QuickBuy.Dominio.Enumerados;
+
 
 namespace QuickBuy.Dominio.ObjetoDeValor
 {

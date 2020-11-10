@@ -1,11 +1,12 @@
 ﻿using QuickBuy.Dominio.ObjetoDeValor;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace QuickBuy.Dominio.Entidades
 {
-    public class Pedido
+    public class Pedido : Entidades
     {
 
         public int Id { get; set; }
@@ -20,5 +21,19 @@ namespace QuickBuy.Dominio.Entidades
         public int FormaPagamentoId { get; set; }
         public FormaPagamento FormaPagamento { get; set; }
         public ICollection<ItemPedido> ItensPedidos { get; set; }
+
+        public override void Validade()
+        {
+            LimparMensagensValidacao();
+            if (!ItensPedidos.Any())
+                AdicionarCritica("O itens de pedido devem ser informados");
+
+            if (string.IsNullOrEmpty(CEP))
+                AdicionarCritica("O CEP deve ser informado");
+
+            if (FormaPagamentoId == 0)
+                AdicionarCritica("A Forma de Pagamento deve ser informada");
+
+        }
     }
 }
