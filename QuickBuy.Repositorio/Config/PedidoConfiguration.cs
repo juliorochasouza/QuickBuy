@@ -42,6 +42,11 @@ namespace QuickBuy.Repositorio.Config
                 .Property(p => p.NumeroEndereco)
                 .IsRequired()
                 .HasMaxLength(100);
+
+            // Aqui esta configurando que
+            // Um pedido so pode ter um usuario
+            // Core reconhece e faz o mapeamento corretamente
+            builder.HasOne(p => p.Usuario);
         }
     }
 }

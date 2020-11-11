@@ -32,7 +32,12 @@ namespace QuickBuy.Repositorio.Config
                 .IsRequired()
                 .HasMaxLength(400);
 
-            //builder.Property(u => u.Pedidos);
+            // Configura 1 para muitos
+            // um usuario para varios pedidos
+            // Core reconhece e ja faz o mapeamento
+            builder
+                .HasMany(u => u.Pedidos)
+                .WithOne(p => p.Usuario)
         }
     }
 }

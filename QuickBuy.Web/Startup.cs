@@ -32,7 +32,10 @@ namespace QuickBuy.Web
             // busca o caminho do banco de dados no arquivo config.json
             var connectionString = Configuration.GetConnectionString("QuickBuyDB");
             // configuração para referenciar o contexto para pegar o repositorio
-            services.AddDbContext<QuickBuyContexto>(option => option.UseMySql(connectionString, m => m.MigrationsAssembly("QuickBuy.Repositorio")));
+            services.AddDbContext<QuickBuyContexto>(option => 
+                                                    // Permite carregamento automaticamente das entidades para fazer o mapeamento
+                                                    option.UseLazyLoadingProxies()
+                                                    .UseMySql(connectionString, m => m.MigrationsAssembly("QuickBuy.Repositorio")));
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
