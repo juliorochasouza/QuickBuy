@@ -13,14 +13,12 @@ namespace QuickBuy.Repositorio.Config
             builder
                 .Property(u => u.Email)
                 .IsRequired()
-                .HasMaxLength(100)
-                .HasColumnType("varchar");
+                .HasMaxLength(100);
 
             builder
                 .Property(u => u.Nome)
                 .IsRequired()
-                .HasMaxLength(100)
-                .HasColumnType("varchar");
+                .HasMaxLength(100);
 
             builder
                 .Property(u => u.SobreNome)
@@ -37,7 +35,7 @@ namespace QuickBuy.Repositorio.Config
             // Core reconhece e ja faz o mapeamento
             builder
                 .HasMany(u => u.Pedidos)
-                .WithOne(p => p.Usuario)
+                .WithOne(p => p.Usuario);
         }
     }
 }
