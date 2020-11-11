@@ -7,7 +7,7 @@
   "Chave": "ValorChave",
   "ConnectionStrings": {
     "SqlServerConnection": "",
-    "QuickBuyDB": "server=localhost;database=QuickBuyDB;User id=root;Password=admin"
+    "QuickBuyDB": "server=localhost;database=QuickBuyDB;User id=root;Password="
   }
 }
 
